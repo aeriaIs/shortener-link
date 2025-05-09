@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import useLinkStore from "./link-store";
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
           Shortener <span className="text-cyan-600">URL</span>
         </h1>
 
-        <div className="w-full max-w-md mx-auto mt-10 p-8 border border-neutral-600 rounded-md">
+        <div className="w-full max-w-lg mx-auto mt-10 p-8 border border-neutral-600 rounded-md">
           <label className="block mb-2">URL</label>
           <textarea
             className="p-2 w-full rounded-md border border-neutral-600 focus:outline-none"
@@ -40,19 +41,19 @@ function App() {
           </button>
         </div>
 
-        <div className="w-full max-w-md mx-auto mt-10 p-8 border border-neutral-600 rounded-md">
+        <div className="w-full max-w-lg mx-auto mt-10 p-8 border border-neutral-600 rounded-md">
           <h5 className="mb-4 text-center">Links</h5>
 
           {links.length ? (
             <ul className="w-full flex flex-col gap-2 list-disc list-inside">
               {links.map((link) => (
                 <li key={link.parsedUrl} className="flex flex-row justify-between items-center gap-2">
-                  <a href={link.parsedUrl} target="_blank">
-                    http:://localhost:5173/{link.parsedUrl}
+                  <a href={`https://shortener.yudhoaerials.site/${link.parsedUrl}`} target="_blank">
+                    https://shortener.yudhoaerials.site/{link.parsedUrl}
                   </a>
                   <button
                     className="text-cyan-500 hover:text-cyan-600 font-medium cursor-pointer"
-                    onClick={() => copyToClipboard(`http://localhost:5173/${link.parsedUrl}`)}>
+                    onClick={() => copyToClipboard(`https://shortener.yudhoaerials.site/${link.parsedUrl}`)}>
                     Copy
                   </button>
                 </li>
